@@ -1,0 +1,40 @@
+{
+  "name": "use-turkey-cities",
+  "version": "0.1.0",
+  "description": "React hook to list Turkey cities and districts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --coverage --runInBand",
+    "prepublish": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BatuhanW/use-turkey-cities.git"
+  },
+  "keywords": [
+    "turkey",
+    "city",
+    "district",
+    "hook",
+    "react",
+    "javascript"
+  ],
+  "author": "BatuhanW <me@batuhan.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BatuhanW/use-turkey-cities/issues"
+  },
+  "homepage": "https://github.com/BatuhanW/use-turkey-cities#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.11"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
