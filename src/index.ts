@@ -21,7 +21,6 @@ const useTurkeyCities = () => {
     city,
     setCity,
     districts,
-    setDistricts,
     district,
     setDistrict
   };
