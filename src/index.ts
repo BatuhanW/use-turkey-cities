@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CitiesJson, { cities } from "./cities";
 
 const useTurkeyCities = () => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Adana");
   const [districts, setDistricts] = useState([""]);
   const [district, setDistrict] = useState("");
 

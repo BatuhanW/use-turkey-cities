@@ -6,6 +6,8 @@ afterEach(function() {
   jest.resetModules();
 });
 
+const defaultDistricts = cities["Adana"].districts;
+
 describe("useTurkeyCities", () => {
   it("definitions", () => {
     const {
@@ -23,25 +25,44 @@ describe("useTurkeyCities", () => {
     expect(current.setDistrict).toBeDefined();
   });
 
-  it("cities list 81 cities", () => {
+  it("cities should list 81 cities", () => {
     const { result } = renderHook(() => useTurkeyCities());
 
     expect(result.current.cities.length).toBe(81);
   });
 
-  it("setting correct city should set districts", () => {
+  it("should set Adana as default city", () => {
+    const { result } = renderHook(() => useTurkeyCities());
+
+    expect(result.current.city).toBe("Adana");
+    expect(result.current.districts).toBe(defaultDistricts);
+  });
+
+  it("setting correct city", () => {
     const { result } = renderHook(() => useTurkeyCities());
 
     act(() => {
-      result.current.setCity("Adana");
+      result.current.setCity("Antalya");
     });
 
-    expect(result.current.city).toBe("Adana");
+    expect(result.current.city).toBe("Antalya");
 
-    expect(result.current.districts).toBe(cities["Adana"].districts);
+    expect(result.current.districts).toBe(cities["Antalya"].districts);
   });
 
-  it("setting *incorrect* city shoul set empty districts", () => {
+  it("setting *empty* city", () => {
+    const { result } = renderHook(() => useTurkeyCities());
+
+    act(() => {
+      result.current.setCity("");
+    });
+
+    expect(result.current.city).toBe("");
+
+    expect(result.current.districts).toBe(defaultDistricts);
+  });
+
+  it("setting *incorrect* city", () => {
     const { result } = renderHook(() => useTurkeyCities());
 
     act(() => {
@@ -50,6 +71,6 @@ describe("useTurkeyCities", () => {
 
     expect(result.current.city).toBe("Random");
 
-    expect(result.current.districts).toBe([""]);
+    expect(result.current.districts).toBe(defaultDistricts);
   });
 });
