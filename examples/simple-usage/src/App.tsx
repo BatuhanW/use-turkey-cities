@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import useTurkeyCities from "use-turkey-cities";
 
 const App: React.FC = () => {
