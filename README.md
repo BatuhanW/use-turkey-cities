@@ -1,6 +1,6 @@
 # List Turkey cities and districts with ease
 
-You can list cities and after setting `city`, you will get `districts` of corresponding city.
+You can list cities, and after setting `city`, you will get `districts` of the corresponding city.
 
 ### Installing
 
